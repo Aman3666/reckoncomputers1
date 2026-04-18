@@ -21,14 +21,14 @@ export default function Navbar({ active, onNav, sections }) {
           className="flex items-center gap-2.5 group"
           data-testid="nav-logo"
         >
-          <span className="w-9 h-9 rounded-[8px] bg-[#E11D2A] text-white flex items-center justify-center">
+          <span className="w-9 h-9 rounded-[8px] bg-[#FF671F] text-white flex items-center justify-center">
             <Cpu className="w-5 h-5" strokeWidth={2.2} />
           </span>
           <span className="flex flex-col leading-none text-left">
-            <span className="font-display font-extrabold text-[16px] tracking-tight text-[#E11D2A]">
+            <span className="font-display font-extrabold text-[16px] tracking-tight text-[#FF671F]">
               RECKON
             </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#E11D2A]/80">
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#FF671F]/80">
               Computers
             </span>
           </span>
