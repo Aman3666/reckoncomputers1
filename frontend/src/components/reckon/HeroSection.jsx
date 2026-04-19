@@ -46,7 +46,7 @@ export default function HeroSection({ onNav }) {
               <br />
               <span className="text-white/55">authorized</span>{" "}
               <span className="relative inline-block">
-                HP distributor
+                distributor
                 <span className="absolute -bottom-1 left-0 right-0 h-[6px] bg-[#0055FF]" />
               </span>
               .
@@ -114,7 +114,7 @@ export default function HeroSection({ onNav }) {
         <div className="mt-12 md:mt-16 flex items-center gap-3 text-white/40">
           <ArrowDown className="w-4 h-4 animate-bounce" />
           <span className="font-mono text-[11px] uppercase tracking-[0.24em]">
-            Scroll · 01 of 06
+            Scroll · 01 of 07
           </span>
         </div>
       </div>

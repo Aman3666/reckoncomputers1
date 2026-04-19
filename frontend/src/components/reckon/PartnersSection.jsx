@@ -5,7 +5,6 @@ import {
   SiLenovo,
   SiIntel,
   SiAmd,
-  SiEpson,
 } from "react-icons/si";
 import { FaMicrosoft } from "react-icons/fa";
 import { Zap, ShieldCheck, Printer, Video } from "lucide-react";
@@ -50,14 +49,20 @@ const SURVEILLANCE_BRANDS = [
   {
     name: "CP Plus",
     badge: "Regional Distributor",
-    // Stylish typographic mark — looks like a real logo
     render: () => (
-      <div className="flex items-center font-display font-extrabold tracking-tight leading-none">
-        <span className="text-[#E11D2A] text-[34px]">CP</span>
-        <span className="ml-1 w-7 h-7 bg-[#E11D2A] text-white flex items-center justify-center text-xl rounded-sm">
-          +
-        </span>
-      </div>
+      <img
+        src="https://logo.clearbit.com/cpplusworld.com"
+        alt="CP Plus"
+        loading="lazy"
+        className="h-10 object-contain"
+        onError={(e) => {
+          const fallback = document.createElement("span");
+          fallback.className =
+            "font-display font-extrabold tracking-tight text-[30px] text-[#E11D2A] leading-none";
+          fallback.textContent = "CP Plus";
+          e.currentTarget.replaceWith(fallback);
+        }}
+      />
     ),
   },
   {
@@ -70,12 +75,11 @@ const SURVEILLANCE_BRANDS = [
         loading="lazy"
         className="h-10 object-contain"
         onError={(e) => {
-          e.currentTarget.replaceWith(
-            Object.assign(document.createElement("span"), {
-              textContent: "Hikvision",
-              className: "font-display font-bold text-2xl text-[#D71921]",
-            })
-          );
+          const fallback = document.createElement("span");
+          fallback.className =
+            "font-display font-bold text-2xl text-[#D71921]";
+          fallback.textContent = "Hikvision";
+          e.currentTarget.replaceWith(fallback);
         }}
       />
     ),
@@ -90,12 +94,11 @@ const SURVEILLANCE_BRANDS = [
         loading="lazy"
         className="h-9 object-contain"
         onError={(e) => {
-          e.currentTarget.replaceWith(
-            Object.assign(document.createElement("span"), {
-              textContent: "Dahua",
-              className: "font-display font-bold text-2xl text-[#E31E24]",
-            })
-          );
+          const fallback = document.createElement("span");
+          fallback.className =
+            "font-display font-bold text-2xl text-[#E31E24]";
+          fallback.textContent = "Dahua";
+          e.currentTarget.replaceWith(fallback);
         }}
       />
     ),
@@ -107,7 +110,21 @@ const OTHER_BRANDS = [
   {
     name: "Epson",
     badge: "Authorized Dealer",
-    render: () => <SiEpson className="w-14 h-14 text-[#003399]" />,
+    render: () => (
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Epson_logo.svg/512px-Epson_logo.svg.png"
+        alt="Epson"
+        loading="lazy"
+        className="h-9 object-contain"
+        onError={(e) => {
+          const fallback = document.createElement("span");
+          fallback.className =
+            "font-display font-bold text-2xl text-[#003399]";
+          fallback.textContent = "EPSON";
+          e.currentTarget.replaceWith(fallback);
+        }}
+      />
+    ),
   },
   {
     name: "Quick Heal",
@@ -119,12 +136,11 @@ const OTHER_BRANDS = [
         loading="lazy"
         className="h-9 object-contain"
         onError={(e) => {
-          e.currentTarget.replaceWith(
-            Object.assign(document.createElement("span"), {
-              textContent: "Quick Heal",
-              className: "font-display font-bold text-2xl text-[#E4002B]",
-            })
-          );
+          const fallback = document.createElement("span");
+          fallback.className =
+            "font-display font-bold text-2xl text-[#E4002B]";
+          fallback.textContent = "Quick Heal";
+          e.currentTarget.replaceWith(fallback);
         }}
       />
     ),
@@ -132,23 +148,39 @@ const OTHER_BRANDS = [
   {
     name: "Numeric",
     badge: "Authorized Dealer",
-    // Typographic mark mirroring Numeric UPS branding
     render: () => (
-      <div className="font-display font-black tracking-tight text-[30px] leading-none flex items-baseline">
-        <span className="text-[#0057B8]">numeric</span>
-        <span className="ml-0.5 w-2 h-2 bg-[#E30613] rounded-full self-end mb-1.5" />
-      </div>
+      <img
+        src="https://logo.clearbit.com/numericindia.com"
+        alt="Numeric"
+        loading="lazy"
+        className="h-9 object-contain"
+        onError={(e) => {
+          const fallback = document.createElement("span");
+          fallback.className =
+            "font-display font-extrabold tracking-tight text-[28px] text-[#0057B8] leading-none";
+          fallback.textContent = "numeric";
+          e.currentTarget.replaceWith(fallback);
+        }}
+      />
     ),
   },
   {
     name: "Artis",
     badge: "Authorized Dealer",
     render: () => (
-      <div className="font-display italic font-extrabold tracking-tight text-[32px] leading-none">
-        <span className="text-[#0F172A]">Art</span>
-        <span className="text-[#0055FF]">i</span>
-        <span className="text-[#0F172A]">s</span>
-      </div>
+      <img
+        src="https://logo.clearbit.com/artis.in"
+        alt="Artis"
+        loading="lazy"
+        className="h-9 object-contain"
+        onError={(e) => {
+          const fallback = document.createElement("span");
+          fallback.className =
+            "font-display italic font-extrabold tracking-tight text-[28px] text-[#0F172A] leading-none";
+          fallback.textContent = "Artis";
+          e.currentTarget.replaceWith(fallback);
+        }}
+      />
     ),
   },
 ];

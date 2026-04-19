@@ -6,6 +6,7 @@ import {
   Wrench,
   ArrowUpRight,
   Printer,
+  RefreshCw,
 } from "lucide-react";
 
 const SERVICES = [
@@ -43,6 +44,12 @@ const SERVICES = [
     title: "Printing Solutions",
     desc: "Authorized dealer for HP and Epson — inkjet, LaserJet, multifunction & large format, with cartridge and toner supply.",
     tag: "05",
+  },
+  {
+    icon: RefreshCw,
+    title: "Certified Refurbished Dealer",
+    desc: "Factory-refurbished laptops, desktops & printers — fully tested, warranty-backed and up to 40% more affordable than new.",
+    tag: "06",
   },
 ];
 

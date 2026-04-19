@@ -56,11 +56,11 @@ export default function Navbar({ active, onNav, sections }) {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
-            href="tel:+912402332963"
+            href="tel:+919823177666"
             className="font-mono text-xs text-[#475569] hover:text-[#0055FF] transition-colors"
             data-testid="nav-phone"
           >
-            +91-240-2332963
+            +91 98231 77666
           </a>
           <Button
             onClick={() => handleNav("contact")}

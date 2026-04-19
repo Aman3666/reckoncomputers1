@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Send, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, ExternalLink } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -10,7 +10,11 @@ import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
 const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const WA_NUMBER = "919975030303";
+const WA_NUMBER = "919823177666";
+const MAPS_URL =
+  "https://www.google.com/maps/dir//Reckon+Computers,+Plot+No+22-B,+Opp.+Devgiri+Bank,+Zambad+Estate+Square,+Kalda+Corner,+Shahnoormiya+Darga+Road,+Chhatrapati+Sambhajinagar,+Maharashtra+431005/@20.3822555,85.8290159,9z/data=!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0x3bdb98679e79c215:0x3d9b92c7b20c93a0!2m2!1d75.3367326!2d19.8678978";
+const ADDRESS_FULL =
+  "Plot No 22-B, Opp. Devgiri Bank, Zambad Estate Square, Kalda Corner, Shahnoormiya Darga Road, Chhatrapati Sambhajinagar, Maharashtra 431005";
 
 export default function ContactSection() {
   const [form, setForm] = useState({
@@ -39,15 +43,13 @@ export default function ContactSection() {
       return;
     }
     setLoading(true);
-    // Try to save to backend if available; fall back gracefully for static hosts (e.g. GitHub Pages).
     if (BACKEND_URL) {
       try {
         await axios.post(`${BACKEND_URL}/api/contact`, form, { timeout: 6000 });
       } catch (_) {
-        /* silent fallback — the WhatsApp link still opens below */
+        /* silent fallback */
       }
     }
-    // Open WhatsApp with the message pre-filled — works on any host, including GitHub Pages
     const url = `https://wa.me/${WA_NUMBER}?text=${buildWhatsAppText()}`;
     window.open(url, "_blank", "noopener,noreferrer");
     toast.success("Opening WhatsApp with your message…");
@@ -71,7 +73,7 @@ export default function ContactSection() {
       className="rc-section bg-[#F8FAFC] text-[#0F172A]"
       data-testid="section-contact"
     >
-      <div className="w-full max-w-7xl mx-auto px-5 md:px-10 pt-24 pb-16 grid grid-cols-12 gap-8 md:gap-12">
+      <div className="w-full max-w-7xl mx-auto px-5 md:px-10 pt-24 pb-20 grid grid-cols-12 gap-8 md:gap-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -82,7 +84,7 @@ export default function ContactSection() {
           <div className="flex items-center gap-3 mb-4">
             <span className="w-10 h-[2px] bg-[#0055FF]" />
             <span className="font-mono text-[11px] uppercase tracking-[0.28em] text-[#0055FF]">
-              06 / Contact
+              07 / Contact
             </span>
           </div>
           <h2 className="font-display text-4xl sm:text-5xl font-bold leading-[1.02] tracking-tight">
@@ -91,22 +93,55 @@ export default function ContactSection() {
             <span className="text-[#475569]">technology.</span>
           </h2>
           <p className="mt-6 text-[#475569] leading-relaxed max-w-md">
-            Drop us a message and our team will get back within 24 hours.
-            Prefer WhatsApp or a quick call? We're right there too.
+            Walk into our store, call us, or message on WhatsApp — our team
+            replies within minutes during working hours.
           </p>
 
-          <div className="mt-8 space-y-0 border-t border-[#E2E8F0]">
+          {/* Store location card with map preview */}
+          <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="contact-map-link"
+            className="mt-8 group flex items-start gap-4 p-5 bg-white border border-[#E2E8F0] hover:border-[#0055FF] transition-colors"
+          >
+            <div className="w-11 h-11 flex-shrink-0 bg-[#0055FF] text-white flex items-center justify-center">
+              <MapPin className="w-5 h-5" />
+            </div>
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center justify-between gap-3">
+                <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#0055FF]">
+                  Store Location
+                </div>
+                <ExternalLink className="w-3.5 h-3.5 text-[#475569] group-hover:text-[#0055FF]" />
+              </div>
+              <div className="mt-1 font-display font-semibold text-[15px] text-[#0F172A] leading-snug">
+                Reckon Computers · Zambad Estate Square
+              </div>
+              <div className="mt-1 text-[13px] text-[#475569] leading-snug">
+                {ADDRESS_FULL}
+              </div>
+              <div className="mt-2 font-mono text-[11px] uppercase tracking-[0.2em] text-[#0055FF]">
+                Get directions →
+              </div>
+            </div>
+          </a>
+
+          <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-0 border-t border-l border-[#E2E8F0]">
             {[
               {
-                icon: MapPin,
-                label: "Visit us",
-                value: "Kalda Corner, Dargah Road, Chh. Sambhaji Nagar (Aurangabad)",
+                icon: Phone,
+                label: "Sales",
+                value: "+91 98231 77666",
+                href: "tel:+919823177666",
+                testId: "contact-phone-1",
               },
               {
                 icon: Phone,
-                label: "Call us",
-                value: "+91-240-2332963  ·  +91-240-6620605",
-                href: "tel:+912402332963",
+                label: "Service",
+                value: "+91 94230 29542",
+                href: "tel:+919423029542",
+                testId: "contact-phone-2",
               },
               {
                 icon: Mail,
@@ -117,20 +152,21 @@ export default function ContactSection() {
               {
                 icon: Clock,
                 label: "Hours",
-                value: "Mon – Sat · 10:00 AM – 8:30 PM",
+                value: "Mon–Sat · 10:00 AM – 8:30 PM",
               },
             ].map((c) => (
               <a
                 key={c.label}
                 href={c.href || "#contact"}
-                className="group flex items-start gap-4 py-4 border-b border-[#E2E8F0] hover:bg-white -mx-4 px-4 transition-colors"
+                data-testid={c.testId}
+                className="group flex items-start gap-3 p-4 border-r border-b border-[#E2E8F0] hover:bg-white transition-colors"
               >
-                <c.icon className="w-4 h-4 text-[#0055FF] mt-1" />
+                <c.icon className="w-4 h-4 text-[#0055FF] mt-0.5" />
                 <div>
                   <div className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#475569]">
                     {c.label}
                   </div>
-                  <div className="mt-0.5 text-[#0F172A] font-medium text-sm md:text-[15px]">
+                  <div className="mt-0.5 text-[#0F172A] font-medium text-[14px]">
                     {c.value}
                   </div>
                 </div>
@@ -243,8 +279,8 @@ export default function ContactSection() {
 
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <p className="font-mono text-[11px] text-[#475569] max-w-sm leading-relaxed">
-              Submitting will open WhatsApp with your enquiry pre-filled, ready
-              to send.
+              Submitting opens WhatsApp with your enquiry pre-filled, ready to
+              send.
             </p>
             <Button
               type="submit"

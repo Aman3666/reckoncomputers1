@@ -7,6 +7,7 @@ import AboutSection from "@/components/reckon/AboutSection";
 import PartnersSection from "@/components/reckon/PartnersSection";
 import ServicesSection from "@/components/reckon/ServicesSection";
 import ClientsSection from "@/components/reckon/ClientsSection";
+import ReviewsSection from "@/components/reckon/ReviewsSection";
 import ContactSection from "@/components/reckon/ContactSection";
 
 const SECTIONS = [
@@ -15,6 +16,7 @@ const SECTIONS = [
   { id: "partners", label: "Partners" },
   { id: "services", label: "Services" },
   { id: "clients", label: "Clients" },
+  { id: "reviews", label: "Reviews" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -61,6 +63,7 @@ export default function ReckonSite() {
         <PartnersSection />
         <ServicesSection />
         <ClientsSection />
+        <ReviewsSection />
         <ContactSection />
       </main>
     </div>
