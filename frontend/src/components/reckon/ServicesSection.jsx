@@ -17,7 +17,6 @@ const SERVICES = [
     image:
       "https://static.prod-images.emergentagent.com/jobs/cfadf56b-cd05-4ed8-b011-684ac1316725/images/34c615d2760b4b750b1a60a85b06b0e12005e37248b82f4c04585d74b0ee189c.png",
     tag: "01",
-    span: "md:col-span-2 md:row-span-2",
   },
   {
     icon: HardDrive,
@@ -90,7 +89,7 @@ export default function ServicesSection() {
         </motion.div>
 
         <div
-          className="grid grid-cols-1 md:grid-cols-4 auto-rows-[220px] md:auto-rows-[200px] gap-px bg-white/10 border border-white/10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px bg-white/10 border border-white/10"
           data-testid="services-grid"
         >
           {SERVICES.map((s, i) => (
@@ -100,9 +99,7 @@ export default function ServicesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.5, delay: i * 0.06 }}
-              className={`group relative overflow-hidden bg-[#0A0F1C] p-6 md:p-7 flex flex-col justify-between ${
-                s.span || "md:col-span-2"
-              }`}
+              className="group relative overflow-hidden bg-[#0A0F1C] p-6 md:p-7 flex flex-col justify-between min-h-[240px]"
               data-testid={`service-${i + 1}`}
             >
               {s.image && (

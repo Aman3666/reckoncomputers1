@@ -27,10 +27,10 @@ export default function HeroSection({ onNav }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="flex items-center gap-3 mb-6"
+              className="inline-flex items-center gap-2.5 mb-6 px-3.5 py-1.5 bg-white/5 border border-white/15 rounded-full backdrop-blur-sm"
             >
-              <span className="w-10 h-[2px] bg-[#06B6D4]" />
-              <span className="font-mono text-[11px] tracking-[0.28em] uppercase text-[#06B6D4]">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
+              <span className="font-display text-[13px] font-medium tracking-wide text-white/85">
                 Est. 2005 · Chh. Sambhaji Nagar
               </span>
             </motion.div>
@@ -96,7 +96,7 @@ export default function HeroSection({ onNav }) {
           >
             {[
               { k: "20+", v: "Years delivering IT" },
-              { k: "3500+", v: "Jetking placements" },
+              { k: "500+", v: "Happy business clients" },
               { k: "18+", v: "Years as Intel partner" },
             ].map((s) => (
               <div key={s.v} className="py-4">

@@ -1,6 +1,9 @@
 import { useState } from "react";
-import { Menu, X, Cpu } from "lucide-react";
+import { Menu, X, Cpu, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const MAPS_URL =
+  "https://www.google.com/maps/dir//Reckon+Computers,+Plot+No+22-B,+Opp.+Devgiri+Bank,+Zambad+Estate+Square,+Kalda+Corner,+Shahnoormiya+Darga+Road,+Chhatrapati+Sambhajinagar,+Maharashtra+431005/@20.3822555,85.8290159,9z";
 
 export default function Navbar({ active, onNav, sections }) {
   const [open, setOpen] = useState(false);
@@ -56,6 +59,16 @@ export default function Navbar({ active, onNav, sections }) {
 
         <div className="hidden lg:flex items-center gap-3">
           <a
+            href={MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="nav-location"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-[#E2E8F0] text-[#0F172A] hover:border-[#0055FF] hover:text-[#0055FF] font-medium text-xs transition-colors"
+          >
+            <MapPin className="w-3.5 h-3.5" />
+            Store
+          </a>
+          <a
             href="tel:+919823177666"
             className="font-mono text-xs text-[#475569] hover:text-[#0055FF] transition-colors"
             data-testid="nav-phone"
@@ -99,6 +112,15 @@ export default function Navbar({ active, onNav, sections }) {
                 {s.label}
               </button>
             ))}
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              data-testid="nav-mobile-location"
+              className="flex items-center gap-2 py-3 border-b border-[#E2E8F0] text-[#0F172A] font-medium"
+            >
+              <MapPin className="w-4 h-4 text-[#0055FF]" /> Store Location
+            </a>
             <Button
               onClick={() => handleNav("contact")}
               className="mt-4 rounded-none bg-[#0055FF] hover:bg-[#0044CC] text-white"
