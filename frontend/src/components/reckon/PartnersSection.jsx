@@ -50,19 +50,46 @@ const SURVEILLANCE_BRANDS = [
     name: "CP Plus",
     badge: "Regional Distributor",
     render: () => (
-      <img
-        src="https://logo.clearbit.com/cpplusworld.com"
-        alt="CP Plus"
-        loading="lazy"
-        className="h-10 object-contain"
-        onError={(e) => {
-          const fallback = document.createElement("span");
-          fallback.className =
-            "font-display font-extrabold tracking-tight text-[30px] text-[#E11D2A] leading-none";
-          fallback.textContent = "CP Plus";
-          e.currentTarget.replaceWith(fallback);
-        }}
-      />
+      <svg
+        viewBox="0 0 180 44"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-10 w-auto"
+        aria-label="CP Plus"
+      >
+        <text
+          x="0"
+          y="34"
+          fontFamily="Outfit, Arial Black, sans-serif"
+          fontSize="36"
+          fontWeight="900"
+          fill="#C41E1E"
+          letterSpacing="-1"
+        >
+          CP
+        </text>
+        <rect x="56" y="6" width="32" height="32" rx="2" fill="#C41E1E" />
+        <text
+          x="60"
+          y="32"
+          fontFamily="Outfit, sans-serif"
+          fontSize="30"
+          fontWeight="900"
+          fill="#FFFFFF"
+        >
+          +
+        </text>
+        <text
+          x="96"
+          y="32"
+          fontFamily="Outfit, sans-serif"
+          fontSize="22"
+          fontWeight="700"
+          fill="#1F1F1F"
+          letterSpacing="1"
+        >
+          PLUS
+        </text>
+      </svg>
     ),
   },
   {
@@ -149,38 +176,74 @@ const OTHER_BRANDS = [
     name: "Numeric",
     badge: "Authorized Dealer",
     render: () => (
-      <img
-        src="https://logo.clearbit.com/numericindia.com"
-        alt="Numeric"
-        loading="lazy"
-        className="h-9 object-contain"
-        onError={(e) => {
-          const fallback = document.createElement("span");
-          fallback.className =
-            "font-display font-extrabold tracking-tight text-[28px] text-[#0057B8] leading-none";
-          fallback.textContent = "numeric";
-          e.currentTarget.replaceWith(fallback);
-        }}
-      />
+      <svg
+        viewBox="0 0 170 36"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-9 w-auto"
+        aria-label="Numeric"
+      >
+        <text
+          x="0"
+          y="28"
+          fontFamily="Outfit, sans-serif"
+          fontSize="32"
+          fontWeight="900"
+          fill="#002C6C"
+          letterSpacing="-1"
+        >
+          numeric
+        </text>
+        <circle cx="156" cy="26" r="5" fill="#E30613" />
+      </svg>
     ),
   },
   {
     name: "Artis",
     badge: "Authorized Dealer",
     render: () => (
-      <img
-        src="https://logo.clearbit.com/artis.in"
-        alt="Artis"
-        loading="lazy"
-        className="h-9 object-contain"
-        onError={(e) => {
-          const fallback = document.createElement("span");
-          fallback.className =
-            "font-display italic font-extrabold tracking-tight text-[28px] text-[#0F172A] leading-none";
-          fallback.textContent = "Artis";
-          e.currentTarget.replaceWith(fallback);
-        }}
-      />
+      <svg
+        viewBox="0 0 120 38"
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-9 w-auto"
+        aria-label="Artis"
+      >
+        <text
+          x="0"
+          y="30"
+          fontFamily="Outfit, sans-serif"
+          fontSize="32"
+          fontWeight="900"
+          fontStyle="italic"
+          fill="#0F172A"
+          letterSpacing="-1"
+        >
+          Art
+        </text>
+        <circle cx="62" cy="12" r="4" fill="#E11D2A" />
+        <text
+          x="56"
+          y="30"
+          fontFamily="Outfit, sans-serif"
+          fontSize="32"
+          fontWeight="900"
+          fontStyle="italic"
+          fill="#E11D2A"
+        >
+          i
+        </text>
+        <text
+          x="72"
+          y="30"
+          fontFamily="Outfit, sans-serif"
+          fontSize="32"
+          fontWeight="900"
+          fontStyle="italic"
+          fill="#0F172A"
+          letterSpacing="-1"
+        >
+          s
+        </text>
+      </svg>
     ),
   },
 ];
