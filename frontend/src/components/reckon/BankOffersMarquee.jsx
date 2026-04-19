@@ -1,24 +1,62 @@
 const BANK_OFFERS = [
-  { bank: "HDFC Bank", src: "/bank-offers/hdfc.png", alt: "HDFC Bank offer" },
-  { bank: "RBL Bank", src: "/bank-offers/rbl.png", alt: "RBL Bank offer" },
-  { bank: "DBS Bank", src: "/bank-offers/dbs.png", alt: "DBS Bank offer" },
-  { bank: "BOBCARD", src: "/bank-offers/bobcard.png", alt: "BOBCARD offer" },
-  { bank: "Yes Bank", src: "/bank-offers/yesbank.png", alt: "Yes Bank offer" },
+  {
+    bank: "HDFC Bank",
+    logo: "/bank-offers/hdfc_logo.png",
+    text: "Get 7.5% Instant Discount Upto Rs.7,500 on HDFC Bank Credit Card EMI",
+    logoSize: "h-14",
+  },
+  {
+    bank: "RBL Bank",
+    logo: "/bank-offers/rbl_logo.png",
+    text: "Get Instant Discount Upto ₹4,000 on RBL Bank credit card EMI",
+    logoSize: "h-12",
+  },
+  {
+    bank: "DBS Bank",
+    logo: "/bank-offers/dbs_logo.png",
+    text: "Get 10% Instant Discount upto Rs.3,000 on DBS Bank Credit Card EMI/Non EMI",
+    logoSize: "h-12",
+  },
+  {
+    bank: "BOBCARD",
+    logo: "/bank-offers/bobcard_logo.png",
+    text: "Get 10% Instant Discount upto Rs.3,000 on BOB Card EMI",
+    logoSize: "h-14",
+  },
+  {
+    bank: "Yes Bank",
+    logo: "/bank-offers/yesbank_logo.png",
+    text: "Get 5% Instant Discount Upto Rs 2,500 on YES Bank Credit Card EMI",
+    logoSize: "h-10",
+  },
 ];
 
 function OfferCard({ offer }) {
   return (
     <div
-      className="shrink-0 w-[360px] md:w-[420px] bg-white border border-[#E2E8F0] overflow-hidden hover:border-[#0055FF] transition-colors shadow-sm"
+      className="shrink-0 w-[380px] h-[150px] bg-white border border-[#E2E8F0] rounded-md p-5 flex items-center gap-5 hover:border-[#0055FF] transition-colors shadow-sm"
       data-testid={`offer-${offer.bank.toLowerCase().replace(/\s+/g, "-")}`}
     >
-      <img
-        src={offer.src}
-        alt={offer.alt}
-        loading="lazy"
-        className="w-full h-auto block select-none"
-        draggable={false}
-      />
+      <div
+        className="shrink-0 w-[130px] h-full flex items-center justify-center pr-4"
+        style={{ borderRight: "1.5px dashed #CBD5E1" }}
+      >
+        <img
+          src={offer.logo}
+          alt={offer.bank}
+          loading="lazy"
+          draggable={false}
+          className={`${offer.logoSize} max-w-full object-contain select-none`}
+        />
+      </div>
+      <div className="flex-1 min-w-0 flex flex-col justify-between h-full py-1">
+        <p className="text-[13.5px] leading-snug font-medium text-[#0F172A]">
+          {offer.text}
+        </p>
+        <p className="text-[11px] font-semibold text-[#94A3B8]">
+          *T&amp;C apply
+        </p>
+      </div>
     </div>
   );
 }
