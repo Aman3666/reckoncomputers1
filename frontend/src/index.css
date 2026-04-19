@@ -43,22 +43,17 @@ body {
 
 /* Scroll snap container */
 .rc-snap {
-    height: 100vh;
+    height: auto;
     overflow-y: auto;
-    scroll-snap-type: y mandatory;
+    scroll-snap-type: none;
     scroll-behavior: smooth;
 }
 
 .rc-section {
-    min-height: 100vh;
+    min-height: auto;
     width: 100%;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
+    display: block;
 }
 
 /* Hide scrollbar */
