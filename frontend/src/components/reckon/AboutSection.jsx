@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Award, MapPin, Users } from "lucide-react";
 
 const OFFICE_IMG =
-  "https://customer-assets.emergentagent.com/job_hp-distributor-mw/artifacts/3vfvenzk_image.png";
+  "https://customer-assets.emergentagent.com/job_brave-ride-4/artifacts/wr0mlzmw_8b20473e-5b63-49df-a677-7f065f3bcbb2-Picsart-AiImageEnhancer.jpeg";
 
 export default function AboutSection() {
   return (
