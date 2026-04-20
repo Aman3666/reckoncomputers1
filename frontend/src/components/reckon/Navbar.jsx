@@ -19,20 +19,29 @@ export default function Navbar({ active, onNav, sections }) {
       data-testid="main-nav"
     >
       <div className="max-w-7xl mx-auto px-5 md:px-10 h-16 flex items-center justify-between">
-        <button
-          onClick={() => handleNav("home")}
-          className="flex items-center gap-2.5 group"
-          data-testid="nav-logo"
-        >
-          <span className="flex flex-col leading-none text-left">
-            <span className="font-display font-extrabold text-[18px] tracking-tight text-[#A30000]">
-              RECKON
-            </span>
-            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[#A30000]/80">
-              Computers
-            </span>
-          </span>
-        </button>
+<button
+  onClick={() => handleNav("home")}
+  className="flex items-center gap-2.5 group"
+  data-testid="nav-logo"
+>
+  <span className="flex flex-col leading-none text-left">
+    
+    <span
+      className="font-extrabold text-[18px] tracking-tight text-[#A30000]"
+      style={{ fontFamily: 'Bungee' }}
+    >
+      RECKON
+    </span>
+
+    <span
+      className="text-[10px] uppercase tracking-[0.22em] text-[#A30000]/80"
+      style={{ fontFamily: 'Bungee' }}
+    >
+      Computers
+    </span>
+
+  </span>
+</button>
 
         <nav className="hidden lg:flex items-center gap-1">
           {sections.map((s) => (
