@@ -97,7 +97,7 @@ export default function ReviewsSection() {
                 <span className="font-display text-5xl font-bold leading-none">
                   {avg}
                 </span>
-                <Stars count={5} />
+                <Stars count={Math.floor(avg)} />
               </div>
               <div className="mt-2 font-mono text-[10px] uppercase tracking-[0.22em] text-[#475569]">
                 Avg. rating · {total} reviews
