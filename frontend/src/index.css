@@ -1,7 +1,8 @@
 @font-face {
     font-family: 'Bazooka';
-    src: url('/fonts/bazooka.ttf') format('truetype');
+    src: url('/bazooka.ttf') format('truetype');
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
 
 @tailwind base;
