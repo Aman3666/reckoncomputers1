@@ -62,7 +62,7 @@ function Stars({ count }) {
 }
 
 export default function ReviewsSection() {
-  const avg = 4.6;
+  const avg = 4.6; // updated
   const total = "500+";
   return (
     <section
