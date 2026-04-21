@@ -14,7 +14,7 @@ const SERVICES = [
   {
     icon: Laptop,
     title: "Laptop Dealer in Aurangabad",
-    desc: "Authorized HP, Dell & Lenovo dealer — business, gaming, enterprise and consumer laptops plus custom-built desktops, all genuine with OEM warranty, for homes and offices across Chhatrapati Sambhajinagar.",
+    desc: "HP, Lenovo, Dell and custom-built workstations — business, gaming, enterprise and consumer laptops, all genuine with OEM warranty, for homes and offices across Chhatrapati Sambhajinagar.",
     image:
       "https://static.prod-images.emergentagent.com/jobs/cfadf56b-cd05-4ed8-b011-684ac1316725/images/34c615d2760b4b750b1a60a85b06b0e12005e37248b82f4c04585d74b0ee189c.png",
     tag: "01",

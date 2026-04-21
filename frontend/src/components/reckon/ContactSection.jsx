@@ -301,7 +301,7 @@ export default function ContactSection() {
             © {new Date().getFullYear()} Reckon Computers · Chh. Sambhaji Nagar
           </div>
           <div className="font-mono text-[10px] uppercase tracking-[0.24em] text-[#475569]">
-            Authorized HP, Dell & Lenovo Dealer · Intel · Microsoft Partner · IT Solutions Company in Marathwada
+            HP Regional Distributor · Authorized Intel · Microsoft · Lenovo · Dell · IT Solutions Company in Marathwada
           </div>
         </div>
       </footer>

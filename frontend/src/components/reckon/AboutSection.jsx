@@ -36,9 +36,8 @@ export default function AboutSection() {
             Founded in <span className="text-[#0F172A] font-semibold">2005</span>,
             Reckon Computers started as a neighbourhood computer shop in
             Aurangabad (Chh. Sambhaji Nagar) and is today the leading IT
-            hardware supplier in Marathwada and an authorized HP, Dell &amp;
-            Lenovo dealer — trusted for quality, speed and rock-solid
-            after-sales service.
+            hardware supplier in Marathwada — trusted for quality, speed and
+            rock-solid after-sales service.
           </p>
 
           <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-0 sm:gap-0 border-t border-[#E2E8F0]">

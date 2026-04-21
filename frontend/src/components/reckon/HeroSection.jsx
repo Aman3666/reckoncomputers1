@@ -46,7 +46,7 @@ export default function HeroSection({ onNav }) {
               <br />
               <span className="text-white/55">authorized</span>{" "}
               <span className="relative inline-block">
-                HP, Dell & Lenovo dealer
+                IT distributor
                 <span className="absolute -bottom-1 left-0 right-0 h-[6px] bg-[#0055FF]" />
               </span>
               .
