@@ -1,0 +1,20 @@
+# Dependencies installed by the platform at runtime
+node_modules/
+
+# Lockfiles are optional — platform will generate its own
+yarn.lock
+package-lock.json
+npm-debug.log*
+
+# OS / editor noise
+.DS_Store
+.vscode/
+.idea/
+
+# Local caches
+.cache/
+dist/
+coverage/
+
+# Zip output (ours)
+*.zip

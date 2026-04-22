@@ -8,6 +8,7 @@
     "node": ">=18.0.0"
   },
   "scripts": {
+    "build": "echo 'No build step required — static build/ folder is already bundled.'",
     "start": "node server.js"
   },
   "dependencies": {
